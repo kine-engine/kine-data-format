@@ -1,0 +1,19 @@
+---
+Language: C
+Standard: Latest
+
+IndentWidth: 4
+UseTab: Never
+TabWidth: 4
+
+ColumnLimit: 120
+
+InsertNewlineAtEOF: true
+LineEnding: LF
+
+BreakBeforeBraces: Allman
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+SortIncludes: Never
+---

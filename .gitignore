@@ -1,0 +1,12 @@
+# Build
+.xmake/
+build/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# FireWave Terminal C Editor
+.commandcode/

@@ -1,0 +1,21 @@
+# Source
+*.c text eol=lf
+*.h text eol=lf
+
+# Build
+CMakeLists.txt text eol=lf
+*.lua text eol=lf
+
+# Documentation
+*.md text eol=lf
+LICENSE text eol=lf
+
+# CI
+*.yml text eol=lf
+
+# Binary
+*.a binary
+*.o binary
+*.obj binary
+*.lib binary
+*.exe binary

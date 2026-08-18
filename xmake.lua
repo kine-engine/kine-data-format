@@ -1,0 +1,17 @@
+set_project("kdf")
+set_version("0.1.0")
+
+target("kdf")
+    set_kind("static")
+    set_languages("c11")
+    add_includedirs("include", { public = true })
+    add_files("src/*.c")
+    set_warnings("all", "extra")
+
+target("kdf_tests")
+    set_kind("binary")
+    set_languages("c11")
+    add_deps("kdf")
+    add_files("tests/test_kdf.c")
+    set_warnings("all", "extra")
+    set_default(false)
