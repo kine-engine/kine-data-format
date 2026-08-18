@@ -80,24 +80,7 @@ ctest --test-dir build
 
 See [docs/BUILDING.md](docs/BUILDING.md) for detailed instructions, including how to install xmake.
 
-## API Overview
-
-All types and functions are declared in `include/kdf/`. Include `kdf/kdf.h` to get everything.
-
-| Header                | Purpose                                         |
-| --------------------- | ----------------------------------------------- |
-| `kdf/kdf.h`           | Umbrella include                                |
-| `kdf/kdf_types.h`     | Type and error enums, opaque type declarations  |
-| `kdf/kdf_allocator.h` | Custom allocator callbacks                      |
-| `kdf/kdf_io.h`        | Reader/writer stream interfaces, memory helpers |
-| `kdf/kdf_document.h`  | Document creation and destruction               |
-| `kdf/kdf_value.h`     | Value type queries and getters                  |
-| `kdf/kdf_object.h`    | Object property access, metadata, iteration     |
-| `kdf/kdf_array.h`     | Array push, get, remove, clear                  |
-| `kdf/kdf_text.h`      | Text format read/write                          |
-| `kdf/kdf_binary.h`    | Binary format read/write                        |
-
-See [docs/USAGE.md](docs/USAGE.md) for a full API reference with examples.
+See [docs/USAGE.md](docs/USAGE.md) for the full API reference with examples.
 
 ## Text Format
 
@@ -129,20 +112,6 @@ The `.kdfb` binary format stores the same logical data in a compact, platform-in
 - No padding or alignment dependencies
 
 The binary format is not a dump of C structs. It is a stable, versioned wire format.
-
-## Project Structure
-
-```
-kdf/
-├── include/kdf/       Public headers
-├── src/               Implementation
-├── tests/             Test suite
-├── docs/              Documentation
-├── xmake.lua          xmake build file
-├── CMakeLists.txt     CMake build file
-├── LICENSE            MIT license
-└── README.md          This file
-```
 
 ## License
 

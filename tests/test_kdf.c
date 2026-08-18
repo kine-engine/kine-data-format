@@ -1463,8 +1463,30 @@ static void test_stability_null_values(void)
 
 // file i/o tests
 
-static const char *test_kdf_path = "/tmp/kdf_test_output.kdf";
-static const char *test_kdfb_path = "/tmp/kdf_test_output.kdfb";
+static const char *test_tmp_dir(void)
+{
+    const char *dir = NULL;
+#ifdef _WIN32
+    dir = getenv("TEMP");
+    if (!dir)
+        dir = getenv("TMP");
+    if (!dir)
+        dir = ".";
+#else
+    dir = "/tmp";
+#endif
+    return dir;
+}
+
+static char test_kdf_path[512];
+static char test_kdfb_path[512];
+
+static void init_test_paths(void)
+{
+    const char *dir = test_tmp_dir();
+    snprintf(test_kdf_path, sizeof(test_kdf_path), "%s/kdf_test_output.kdf", dir);
+    snprintf(test_kdfb_path, sizeof(test_kdfb_path), "%s/kdf_test_output.kdfb", dir);
+}
 
 static kdf_document *build_test_document(void)
 {
@@ -1758,6 +1780,7 @@ static void test_file_large_resource(void)
 
 int main(void)
 {
+    init_test_paths();
     printf("KDF Test Suite\n");
     printf("==============\n\n");
 
